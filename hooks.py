@@ -50,7 +50,10 @@ def test_string(hooks_string):
         else:
             my_stack.push(i)
 
-    return "Сбалансированно"
+    if my_stack.is_empty():
+        return "Сбалансированно"
+    else:
+        return "Несбалансированно"
 
 
 if __name__ == "__main__":
@@ -61,7 +64,8 @@ if __name__ == "__main__":
         "}{}",
         "{{[(])]}}",
         "[[{())}]",
-        "()]"
+        "()]",
+        "((("
     ]
 
     for string in my_strings:
